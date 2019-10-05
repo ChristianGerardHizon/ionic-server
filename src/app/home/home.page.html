@@ -1,14 +1,43 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Ionic Barcode Scanner
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+  <!-- Barcode Url
+  <div class="center" *ngIf="url; else placeholder">
+    <h5>Barcode Detail:</h5>
+    <a [href]="url">The a tag</a>
   </div>
+
+  <ng-template #placeholder>
+    <div class="center">
+      Click the button to start scanning.
+    </div>
+  </ng-template>
+  <br />
+
+  <ion-button class="center" color="primary" expand="full" (click)="scan()"
+    >Scan Barcode</ion-button
+  >
+
+  <br> -->
+
+  <ion-input [(ngModel)]="name" placeholder="name"></ion-input>
+  <ion-input [(ngModel)]="lastname" placeholder="lastname"></ion-input>
+  <ion-input [(ngModel)]="birthday" placeholder="birthday"></ion-input>
+  <ion-input [(ngModel)]="image" placeholder="image"></ion-input>
+
+  <ion-button class="center" color="primary" expand="full" (click)="newUser()"
+    >Create New User</ion-button
+  >
+
+  <ion-list *ngFor="let user of users">
+    <ion-item>
+      <ion-label>{{ user.name }} {{ user.lastname }}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

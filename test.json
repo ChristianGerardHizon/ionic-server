@@ -1,0 +1,7 @@
+{
+    "key": "hello world",
+    "key1": 1,
+    "nested-object": {
+        "hasDate": 1
+    }
+}
